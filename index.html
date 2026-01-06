@@ -92,7 +92,7 @@ p { font-size: 18px; margin: 20px 0; }
 </div>
 
 <!-- 背景音乐播放器 -->
-<audio id="bgm" src="music1.mp3" autoplay loop></audio>
+<audio id="bgm" src="music1.mp3" loop></audio>
 
 <script>
 // 飘落爱心
@@ -107,6 +107,19 @@ function createHeart() {
     setTimeout(() => { heart.remove(); }, 6000);
 }
 setInterval(createHeart, 300);
+
+// 触碰或点击页面后播放音乐
+function playBGMOnce() {
+    const bgm = document.getElementById('bgm');
+    bgm.play().catch(err => console.log('播放失败', err));
+    // 移除事件，防止重复触发
+    window.removeEventListener('click', playBGMOnce);
+    window.removeEventListener('touchstart', playBGMOnce);
+}
+
+// 监听用户第一次触碰或点击
+window.addEventListener('click', playBGMOnce);
+window.addEventListener('touchstart', playBGMOnce);
 </script>
 </body>
 </html>
