@@ -12,6 +12,7 @@
             color: #4a2c2a;
             transition: background 5s ease;
             animation: gradientShift 20s infinite alternate;
+            cursor: pointer; /* 提示用户可以点击播放音乐 */
         }
 
         @keyframes gradientShift {
@@ -68,6 +69,14 @@
             50% { transform: scale(1.2); }
             100% { transform: scale(1); }
         }
+
+        /* 音乐提示 */
+        #music-tip {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -108,13 +117,4 @@
     <div class="heart">❤️</div>
 
     <div class="signature">
-        永远爱你的<br>
-        徐先生
-    </div>
-</div>
-
-<!-- 背景音乐 -->
-<audio src="music.mp3" autoplay loop></audio>
-
-</body>
-</html>
+        永远爱你的<b
