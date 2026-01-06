@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <title>写给邱馨慧的一封表白</title>
     <style>
+        /* 页面基础样式 */
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f8cdda, #fbc2eb);
             font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
             color: #4a2c2a;
+            transition: background 5s ease;
+            animation: gradientShift 20s infinite alternate;
+        }
+
+        @keyframes gradientShift {
+            0% { background: linear-gradient(135deg, #f8cdda, #fbc2eb); }
+            25% { background: linear-gradient(135deg, #fbc2eb, #fad0c4); }
+            50% { background: linear-gradient(135deg, #fad0c4, #fef9d7); }
+            75% { background: linear-gradient(135deg, #fef9d7, #d4fc79); }
+            100% { background: linear-gradient(135deg, #d4fc79, #96e6a1); }
         }
 
         .container {
@@ -20,6 +30,7 @@
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             line-height: 2;
+            transition: background 2s ease, color 2s ease;
         }
 
         h1 {
@@ -49,6 +60,13 @@
             font-size: 48px;
             margin-top: 30px;
             color: #e74c3c;
+            animation: beat 1s infinite alternate;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
@@ -94,6 +112,9 @@
         徐先生
     </div>
 </div>
+
+<!-- 背景音乐 -->
+<audio src="music.mp3" autoplay loop></audio>
 
 </body>
 </html>
